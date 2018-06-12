@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1" client="site" method="upgrade">
+	<name>mod_xtrmcookie_advertising</name>
+	<author>XtrmAddons.COM</author>
+	<creationDate>June 12, 2018</creationDate>
+	<authorEmail>contact@xtrmaddons.com</authorEmail>
+	<authorUrl>http://www.xtrmaddons.com/</authorUrl>
+	<copyright>Copyright 2015+ XtrmAddons.COM. All rights reserved.</copyright>
+	<license>https://www.gnu.org/licenses/lgpl-3.0.html GNU/GPL</license>
+	<version>3.1.02.00.180612</version>
+	<description>MOD_XTRMCOOKIE_ADVERTISING_XML_DESCRIPTION</description>
+	
+    <!-- Runs on install/uninstall/update -->
+    <scriptfile>script.php</scriptfile>
+	
+	<!-- Main File Copy -->
+	<files>
+		<filename module="mod_xtrmcookie_advertising">mod_xtrmcookie_advertising.php</filename>
+        <filename>mod_xtrmcookie_advertising.xml</filename>
+	</files>	
+	
+	<!-- Language File Copy -->
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.mod_xtrmcookie_advertising.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.mod_xtrmcookie_advertising.sys.ini</language>
+		<language tag="fr-FR">language/fr-FR/fr-FR.mod_xtrmcookie_advertising.ini</language>
+		<language tag="fr-FR">language/fr-FR/fr-FR.mod_xtrmcookie_advertising.sys.ini</language>
+   	</languages>
+        
+	<!-- Media files -->
+	<media folder="media" destination="mod_xtrmcookie_advertising">
+	    <folder>js</folder>
+	</media>
+	
+	<!-- Configuration of the module -->
+    <config>
+		<fields name="params">
+			<fieldset name="basic" addfieldpath="/administrator/components/com_content/models/fields">
+				<field name="description" type="editor"
+					label="MOD_XTRMCOOKIE_ADVERTISING_FIELD_DESCRIPTION_LABEL"
+					description="MOD_XTRMCOOKIE_ADVERTISING_FIELD_DESCRIPTION_DESC"
+					filter="JComponentHelper::filterText"
+					buttons="false" />
+					
+				<field name="position" type="list" default="top"
+					label="MOD_XTRMCOOKIE_ADVERTISING_FIELD_POSITION_LABEL"
+					description="MOD_XTRMCOOKIE_ADVERTISING_FIELD_POSITION_DESC"
+					size="1"
+					class="inputbox"
+					labelclass="control-label">
+					<option value="top">MOD_XTRMCOOKIE_ADVERTISING_OPTION_TOP_LABEL</option>
+					<option value="bottom">MOD_XTRMCOOKIE_ADVERTISING_OPTION_BOTTOM_LABEL</option>
+				</field>
+				
+				<field name="id_article" type="modal_article"
+					label="MOD_XTRMCOOKIE_ADVERTISING_FIELD_SELECT_ARTICLE_LABEL"
+					description="MOD_XTRMCOOKIE_ADVERTISING_FIELD_SELECT_ARTICLE_DESC"
+					edit="true"
+					clear="false"
+					labelclass="control-label" />
+					
+				<field name="display" type="list" default="0"
+					label="MOD_XTRMCOOKIE_ADVERTISING_FIELD_DISPLAY_LABEL"
+					description="MOD_XTRMCOOKIE_ADVERTISING_FIELD_DISPLAY_DESC"
+					size="1"
+					class="inputbox"
+					labelclass="control-label">
+					<option value="0">JNO</option>
+					<option value="1">MOD_XTRMCOOKIE_ADVERTISING_OPTION_ALWAYS_LABEL</option>
+				</field>
+				
+				<field name="btn_text_cgu" type="text" default=""
+					label="MOD_XTRMCOOKIE_ADVERTISING_FIELD_BTN_TEXT_CGU_LABEL"
+					description="MOD_XTRMCOOKIE_ADVERTISING_FIELD_BTN_TEXT_CGU_DESC"
+					size="40"
+					class="inputbox"
+					labelclass="control-label" />
+				
+				<field name="btn_text_validate" type="text" default=""
+					label="MOD_XTRMCOOKIE_ADVERTISING_FIELD_BTN_TEXT_VALIDATE_LABEL"
+					description="MOD_XTRMCOOKIE_ADVERTISING_FIELD_BTN_TEXT_VALIDATE_DESC"
+					size="40"
+					class="inputbox"
+					labelclass="control-label" />
+			</fieldset>
+		</fields>
+    </config>
+	
+    <!-- Extension Update Specification -->
+	<updateservers>
+		<server name="03090 - Cookie Advertising Module" priority="1" type="extension">http://download.xtrmaddons.com/joomla/modules/03090-mod_xtrmcookie_advertising/stable/3.1.02.00/update.xml</server>
+	</updateservers>
+</extension>
