@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1" client="site" method="upgrade">
+    <name>mod_xtrmtotop</name>
+    <creationDate>2018-02-02</creationDate>
+    <author>XtrmAddons.COM</author>
+    <authorEmail>contact@xtrmaddons.com</authorEmail>
+    <authorUrl>http://www.xtrmaddons.com</authorUrl>
+    <copyright>Copyright 2015+ XtrmAddons.com. All rights reserved.</copyright>
+    <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+    <version>4.1.01.00.180202</version>
+    <description>MOD_XTRMTOTOP_XML_DESCRIPTION</description>
+	
+    <!-- Runs on install/uninstall/update -->
+    <scriptfile>script.php</scriptfile>
+	
+	<!-- Main File Copy -->
+    <files>
+        <filename module="mod_xtrmtotop">mod_xtrmtotop.php</filename>
+        <filename>index.html</filename>
+        <filename>mod_xtrmtotop.xml</filename>
+    </files>
+	
+	<!-- Language File Copy -->
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.mod_xtrmtotop.ini</language>
+		<language tag="en-GB">en-GB/en-GB.mod_xtrmtotop.sys.ini</language>
+		<language tag="fr-FR">fr-FR/fr-FR.mod_xtrmtotop.ini</language>
+		<language tag="fr-FR">fr-FR/fr-FR.mod_xtrmtotop.sys.ini</language>
+	</languages>
+        
+	<!-- Media files -->
+	<media folder="media" destination="mod_xtrmtotop">
+	    <filename>index.html</filename>
+	    <folder>image</folder>
+	    <folder>js</folder>
+	</media>
+	
+	<!-- Configuration of the module -->
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="useOptions" type="radio" default="1"
+					label="MOD_XTRMTOTOP_FIELD_USE_OPTIONS_LABEL"
+					description="MOD_XTRMTOTOP_FIELD_USE_OPTIONS_DESC"
+					filter="intval"
+					size="1"
+					labelclass="control-label"
+					class="btn-group">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+            		
+				<field name="right" type="text" default="25px"
+					label="MOD_XTRMTOTOP_FIELD_RIGHT_LABEL"
+					description="MOD_XTRMTOTOP_FIELD_RIGHT_DESC"
+            		class="inputbox" />
+            		
+				<field name="bottom" type="text" default="25px"
+					label="MOD_XTRMTOTOP_FIELD_BOTTOM_LABEL"
+					description="MOD_XTRMTOTOP_FIELD_BOTTOM_DESC"
+            		class="inputbox" />
+            	
+            	<field name="width" type="text" default="80px"
+					label="MOD_XTRMTOTOP_FIELD_WIDTH_LABEL"
+					description="MOD_XTRMTOTOP_FIELD_WIDTH_DESC"
+            		class="inputbox" />
+            	
+            	<field name="height" type="text" default="80px"
+					label="MOD_XTRMTOTOP_FIELD_HEIGHT_LABEL"
+					description="MOD_XTRMTOTOP_FIELD_HEIGHT_DESC"
+            		class="inputbox" />
+            	
+            	<field name="border" type="text" default="1px solid #ccc"
+					label="MOD_XTRMTOTOP_FIELD_BORDER_LABEL"
+					description="MOD_XTRMTOTOP_FIELD_BORDER_DESC"
+            		class="inputbox" />
+            	
+            	<field name="borderRadius" type="text" default="8px"
+					label="MOD_XTRMTOTOP_FIELD_BORDER_RADIUS_LABEL"
+					description="MOD_XTRMTOTOP_FIELD_BORDER_RADIUS_DESC"
+            		class="inputbox" />
+            	
+            	<field name="background" type="text" default="#666"
+					label="MOD_XTRMTOTOP_FIELD_BACKGROUND_LABEL"
+					description="MOD_XTRMTOTOP_FIELD_BACKGROUND_DESC"
+            		class="inputbox" />
+            	
+            	<field name="backgroundImage" type="text" default="/media/mod_xtrmtotop/image/scroll-to-top.png"
+					label="MOD_XTRMTOTOP_FIELD_BACKGROUND_IMAGE_LABEL"
+					description="MOD_XTRMTOTOP_FIELD_BACKGROUND_IMAGE_DESC"
+            		class="inputbox" />
+            	
+            	<field name="opacity" type="text" default=".9"
+					label="MOD_XTRMTOTOP_FIELD_OPACITY_LABEL"
+					description="MOD_XTRMTOTOP_FIELD_OPACITY_DESC"
+            		class="inputbox" />
+			</fieldset>
+		</fields>
+	</config>
+	
+    <!-- Extension Update Specification -->
+	<updateservers>
+		<server name="&#9734; To Top Module Update" priority="1" type="extension">[update_folder]</server>
+	</updateservers>
+</extension>
