@@ -83,6 +83,6 @@
 	
     <!-- Extension Update Specification -->
 	<updateservers>
-		<server name="03090 - Cookie Advertising Module" priority="1" type="extension">http://download.xtrmaddons.com/joomla/modules/03090-mod_xtrmcookie_advertising/stable/3.1.03.00/update.xml</server>
+		<server name="03090 - Cookie Advertising Module" priority="1" type="extension">https://download.xtrmaddons.com/joomla/modules/03090-mod_xtrmcookie_advertising/stable/3.1.03.00/update.xml</server>
 	</updateservers>
 </extension>
