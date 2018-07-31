@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		mod_xtrmcookie_advertising.php, build date : 12 jun. 2018
+ * @version		mod_xtrmcookie_advertising.php, build date : 31 jul. 2018
  * @package		Xtrm-Addons
  * @subpackage	mod_xtrmcookie_advertising
  * @copyright	Copyright (C) 2015+ XtrmAddons.COM. All rights reserved.
@@ -20,8 +20,8 @@ defined('_JEXEC') or die;
 JHtml::_('behavior.framework', true);
 JHTML::_('behavior.modal');
 
-// Add cookie support for JQuery
-JFactory::getDocument()->addScript(JURI::base(true).'/media/mod_xtrmcookie_advertising/js/jquery.cookie.min.js');
+// Add cookie support for Javascript
+JFactory::getDocument()->addScript('https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js');
 
 // Check for cookie
 $config 	= JFactory::getConfig();
@@ -47,13 +47,18 @@ if(empty($btnTitle))
 <?php if(empty($show) || $params->get('display')) : ?>
 <script>
 jQuery(document).ready(function($) {
-	var xCookieAdvertising = $('#xCookieAdvertising');
-	jQuery('body').append(xCookieAdvertising);
+	var cook = Cookies.get('<?php echo $cookieName; ?>');
+	var display = <?php echo $params->get('display') ? 'true' : 'false'; ?>;
+	if(typeof cook == 'undefined' || cook == null || display == true)
+	{
+		var xCookieAdvertising = $('#xCookieAdvertising');
+		jQuery('body').append(xCookieAdvertising);
 
-	jQuery('.acceptCGU').click(function(){
-		jQuery.cookie('<?php echo $cookieName; ?>', 1);
-		xCookieAdvertising.remove();
-	});
+		jQuery('.acceptCGU').click(function(){
+			Cookies.set('<?php echo $cookieName; ?>', 1);
+			xCookieAdvertising.remove();
+		});
+	}
 });
 </script>
 
